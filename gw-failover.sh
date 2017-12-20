@@ -22,15 +22,15 @@ then
 	then
         ip route del default
         ip route add default via "$GW2" dev "$IF2"
-		ip route flush cache
-		echo "$TIME: change gw $CURRENT_GW -> $GW2"
+	#ip route flush cache
+	echo "$TIME: change gw $CURRENT_GW -> $GW2"
 
     elif [ "$CURRENT_GW" != "$GW1" ]
 	then
         ip route del default
         ip route add default via "$GW1" dev "$IF1"
-		ip route flush cache
-		echo "$TIME: change gw $CURRENT_GW -> $GW1"
+	#ip route flush cache
+	echo "$TIME: change gw $CURRENT_GW -> $GW1"
     fi
 else
 	echo "$TIME: GW $CURRENT_GW online!"
