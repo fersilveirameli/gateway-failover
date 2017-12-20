@@ -15,7 +15,7 @@ CURRENT_GW="$(ip route get $IP_CHECK | sed -rn 's/^.*via ([^ ]*).*$/\1/p')"
 ping -c 2 -W $PING_TIMEOUT $IP_CHECK > /dev/null
 IS_GW_OFFLINE=$?
 
-if [ "$IS_GW_OFFLINE" == "1" ]
+if [ "$IS_GW_OFFLINE" != "0" ]
 then
 	echo "$TIME: GW $CURRENT_GW offline!"
     if [ "$CURRENT_GW" != "$GW2" ]
