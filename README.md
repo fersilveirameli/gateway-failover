@@ -14,3 +14,10 @@ echo IF2=eth0 >> ~/.bashrc
 
 source ~/.bashrc
 ```
+
+
+## cron
+
+```
+*/1 * * * * sh /usr/bin/gw-failover.sh  >> /var/log/gateway-failover/gw-failover.log
+```
